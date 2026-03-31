@@ -1,0 +1,181 @@
+{
+    "caps" : {
+        "sink_pads" : [
+            {
+                "media_type" : "video/x-raw",
+                "params" : [
+                    {
+                        "json_field" : null,
+                        "name" : "format",
+                        "type" : "string",
+                        "values" : "RGB, BGR"
+                    },
+                    {
+                        "json_field" : null,
+                        "name" : "width",
+                        "type" : "int",
+                        "values" : "1 - 4096"
+                    },
+                    {
+                        "json_field" : null,
+                        "name" : "height",
+                        "type" : "int",
+                        "values" : "1 - 4096"
+                    }
+                ]
+            }
+        ],
+        "src_pads" : [
+            {
+                "media_type" : "application/vnd.simaai.tensor",
+                "params" : [
+                    {
+                        "json_field" : null,
+                        "name" : "format",
+                        "type" : "string",
+                        "values" : "MLA"
+                    },
+                    {
+                        "json_field" : "data_type",
+                        "name" : "data_type",
+                        "type" : "string",
+                        "values" : "(INT8, INT16, INT32), (INT8, INT16, INT32), (INT8, INT16, INT32), (INT8, INT16, INT32), (INT8, INT16, INT32), (INT8, INT16, INT32), (INT8, INT16, INT32), (INT8, INT16, INT32), (INT8, INT16, INT32)"
+                    },
+                    {
+                        "json_field" : "output_width",
+                        "name" : "width",
+                        "type" : "int",
+                        "values" : "(1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096)"
+                    },
+                    {
+                        "json_field" : "output_height",
+                        "name" : "height",
+                        "type" : "int",
+                        "values" : "(1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096)"
+                    },
+                    {
+                        "json_field" : "output_depth",
+                        "name" : "depth",
+                        "type" : "int",
+                        "values" : "(1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096)"
+                    },
+                    {
+                        "json_field" : "slice_width",
+                        "name" : "slice_width",
+                        "type" : "int",
+                        "values" : "(1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096)"
+                    },
+                    {
+                        "json_field" : "slice_height",
+                        "name" : "slice_height",
+                        "type" : "int",
+                        "values" : "(1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096)"
+                    },
+                    {
+                        "json_field" : "slice_depth",
+                        "name" : "slice_depth",
+                        "type" : "int",
+                        "values" : "(1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096), (1 - 4096)"
+                    }
+                ]
+            }
+        ]
+    },
+    "cpu" : "MLA",
+    "data_type" : [
+        "EVXX_BFLOAT16",
+        "EVXX_BFLOAT16",
+        "EVXX_BFLOAT16",
+        "EVXX_BFLOAT16",
+        "EVXX_BFLOAT16",
+        "EVXX_BFLOAT16",
+        "EVXX_BFLOAT16",
+        "EVXX_BFLOAT16",
+        "EVXX_BFLOAT16"
+    ],
+    "debug" : "EVXX_DBG_DISABLED",
+    "graph_name" : "mla",
+    "next_cpu" : 1,
+    "node_name" : "mla",
+    "output_depth" : [
+        64,
+        64,
+        64,
+        1,
+        1,
+        1,
+        42,
+        42,
+        42
+    ],
+    "output_height" : [
+        80,
+        40,
+        20,
+        80,
+        40,
+        20,
+        80,
+        40,
+        20
+    ],
+    "output_width" : [
+        80,
+        40,
+        20,
+        80,
+        40,
+        20,
+        80,
+        40,
+        20
+    ],
+    "simaai__params" : {
+        "batch_size" : 1,
+        "batch_sz_model" : 1,
+        "in_tensor_sz" : 0,
+        "model_path" : "/root/vdp-simaai-ros2/packages/yolo_pose_bf16/resources/processmla/modalix/yolov11_stage1_mla.elf",
+        "next_cpu" : 1,
+        "out_tensor_sz" : 0,
+        "outputs" : [
+            {
+                "name" : "mla_output_tensor",
+                "size" : 2150400
+            }
+        ]
+    },
+    "slice_depth" : [
+        16,
+        16,
+        16,
+        1,
+        1,
+        1,
+        42,
+        42,
+        42
+    ],
+    "slice_height" : [
+        16,
+        8,
+        4,
+        16,
+        8,
+        4,
+        16,
+        8,
+        4
+    ],
+    "slice_width" : [
+        16,
+        8,
+        4,
+        4,
+        2,
+        1,
+        4,
+        2,
+        1
+    ],
+    "version" : 0.10000000000000001
+}

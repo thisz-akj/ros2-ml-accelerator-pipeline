@@ -1,0 +1,48 @@
+{
+    "version": 0.1,
+    "node_name": "image_mla_buffer_concat",
+    "memory": {
+      "cpu": 1,
+      "next_cpu": 1
+    },
+    "system": {
+      "out_buf_queue": 4,
+      "debug": 0,
+      "dump_data": 0
+    },
+    "buffers": {
+      "input": [
+        {
+          "name": "decoder",
+          "order": 0,
+          "offset": 0,
+          "size":1382400,
+          "copy_bytes": 1382400
+        },
+        {
+          "name": "simaai_buffer_concatenator_muxer",
+          "order": 1,
+          "offset": 0,
+          "size":722400,
+          "copy_bytes": 722400
+        }
+      ],
+      "output": {
+        "size": 2104800
+      }
+    },
+    "caps": {
+        "sink_pads": [
+          {
+            "media_type": "application/vnd.simaai.tensor",
+            "params": []
+          }
+        ],
+        "src_pads": [
+          {
+            "media_type": "application/vnd.simaai.tensor",
+            "params": []
+          }
+        ]
+      }
+  }

@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>yolo_pose_bf16</name>
+  <version>0.4.0</version>
+  <description>Yolo Pose: multi-person keypoint detection</description>
+  <maintainer email="aseem.kannal@sima.ai">aseem.kannal@sima.ai</maintainer>
+  <license>Apache License 2.0</license>
+
+  <!-- Build tools -->
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <!-- Message generation -->
+  <member_of_group>rosidl_interface_packages</member_of_group>
+  <build_depend>rosidl_default_generators</build_depend>
+
+  <!-- Core ROS interfaces -->
+  <build_depend>builtin_interfaces</build_depend>
+  <build_depend>sensor_msgs</build_depend>
+  <build_depend>std_msgs</build_depend>
+  <build_depend>message_filters</build_depend>
+
+  <exec_depend>rosidl_default_runtime</exec_depend>
+  <exec_depend>rosidl_typesupport_fastrtps_cpp</exec_depend>
+  <exec_depend>sensor_msgs</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+  <exec_depend>builtin_interfaces</exec_depend>
+  <build_depend>message_filters</build_depend>
+
+  <!-- External libraries -->
+  <exec_depend>OpenCV</exec_depend>
+  <exec_depend>jsoncpp</exec_depend>
+  <exec_depend>pluginlib</exec_depend>
+  <exec_depend>gstreamer1.0</exec_depend>
+  <exec_depend>gstreamer1.0-app</exec_depend>
+  <exec_depend>ros2launch</exec_depend>
+
+  <!-- Internal reusable package -->
+  <depend>simaai_common</depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

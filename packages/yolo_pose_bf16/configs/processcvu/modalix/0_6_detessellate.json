@@ -1,0 +1,45 @@
+{
+    "graph_name" : "detessellate",
+    "cpu" : "CVU",
+    "next_cpu" : "APU",
+    "input_buffers" : [
+        {
+            "memories" : [
+                {
+                    "segment_name" : "parent",
+                    "graph_input_name" : "input_tensor"
+                }
+            ],
+            "name" : "simaai_buffer_concatenator_6"
+        }
+    ],
+    "output_memory_order" : [
+        "output_tensor"
+    ],
+    "debug" : "EVXX_DBG_DISABLED",
+    "batch_size" : 1,
+    "input_width" : 80,
+    "input_height" : 80,
+    "input_depth" : 1,
+    "input_channels" : 42,
+    "tile_width" : 4,
+    "tile_height" : 16,
+    "tile_depth" : 1,
+    "tile_channels" : 42,
+    "input_dtype" : "EVXX_INT16",
+    "output_format" : "NDHWC",
+    "caps" : {
+        "sink_pads" : [
+            {
+                "media_type" : "application/vnd.simaai.tensor",
+                "params" : []
+            }
+        ],
+        "src_pads" : [
+            {
+                "media_type" : "application/vnd.simaai.tensor",
+                "params" : []
+            }
+        ]
+    }
+}

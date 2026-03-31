@@ -1,0 +1,68 @@
+{
+  "version": 0.1,
+  "node_name": "simaai_yolopose",
+  "memory": {
+    "cpu": 0,
+    "next_cpu": 0
+  },
+  "system": {
+    "out_buf_queue": 1,
+    "debug": 0,
+    "dump_data": 0
+  },
+  "buffers": {
+    "input": [
+      {
+        "name": "simaai_buffer_concatenator_muxer",
+        "size": 722400
+      },
+      {
+        "name": "decoder",
+        "size": 1382400
+      }
+    ],
+    "output": {
+      "size": 1382400
+    }
+  },
+  "confidence_threshold": 0.8,
+  "nms_iou_threshold": 0.5,
+  "model_width": 640,
+  "model_height": 640,
+  "frame_width": 1280,
+  "frame_height": 720,
+  "num_keypoints": 14,
+  "num_classes": 1,
+  "num_anchors": 8400,
+  "num_heads": 3,
+  "model_out_shapes": [
+    [1, 80, 80, 1],
+    [1, 40, 40, 1],
+    [1, 20, 20, 1],
+    [1, 80, 80, 42],
+    [1, 40, 40, 42],
+    [1, 20, 20, 42]
+  ],
+  "head_scales": [8, 16, 32],
+  "caps": {
+    "sink_pads": [
+      {
+        "media_type": "application/vnd.simaai.tensor",
+        "params": []
+      }
+    ],
+    "src_pads": [
+      {
+        "media_type": "application/vnd.simaai.tensor",
+        "params": [
+          {
+            "name": "format",
+            "type": "string",
+            "values": "poseyolo",
+            "json_field": null
+          }
+        ]
+      }
+    ]
+  }
+}

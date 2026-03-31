@@ -1,0 +1,46 @@
+{
+  "version": 0.1,
+  "node_name": "simaai_buffer_concatenator_5",
+  "memory": {
+    "cpu": 0,
+    "next_cpu": 1
+  },
+  "system": {
+    "out_buf_queue": 1,
+    "debug": 0,
+    "dump_data": 0
+  },
+  "buffers": {
+    "input": [
+      {
+        "name": "simaai_process_mla",
+        "size": 2150400,
+        "copy_bytes": 12800,
+        "offset": 1331200,
+        "order": 0
+      }
+    ],
+    "output": {
+      "size": 12800
+    }
+  },
+  "graph_name": "buffer_concat",
+  "cpu": 0,
+  "next_cpu": 1,
+  "debug": "EVXX_DBG_DISABLED",
+  "type": "split",
+  "caps": {
+    "sink_pads": [
+      {
+        "media_type": "application/vnd.simaai.tensor",
+        "params": []
+      }
+    ],
+    "src_pads": [
+      {
+        "media_type": "application/vnd.simaai.tensor",
+        "params": []
+      }
+    ]
+  }
+}

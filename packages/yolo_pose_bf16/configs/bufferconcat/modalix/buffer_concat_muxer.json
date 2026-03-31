@@ -1,0 +1,76 @@
+{
+    "version": 0.1,
+    "node_name": "simaai_buffer_concatenator_muxer",
+    "memory": {
+      "cpu": 1,
+      "next_cpu": 1
+    },
+    "system": {
+      "out_buf_queue": 4,
+      "debug": 0,
+      "dump_data": 0
+    },
+    "buffers": {
+      "input": [
+        {
+          "name": "simaai_detesselate_3",
+          "order": 0,
+          "offset": 0,
+          "size":12800,
+          "copy_bytes": 12800
+        },
+        {
+          "name": "simaai_detesselate_4",
+          "order": 1,
+          "offset": 0,
+          "size":3200,
+          "copy_bytes": 3200
+        },
+        {
+          "name": "simaai_detesselate_5",
+          "order": 2,
+          "offset": 0,
+          "size": 800,
+          "copy_bytes": 800
+        },
+        {
+          "name": "simaai_detesselate_6",
+          "order": 3,
+          "offset": 0,
+          "size":537600,
+          "copy_bytes": 537600
+        },
+        {
+          "name": "simaai_detesselate_7",
+          "order": 4,
+          "offset": 0,
+          "size":134400,
+          "copy_bytes": 134400
+        },
+        {
+          "name": "simaai_detesselate_8",
+          "order": 5,
+          "offset": 0,
+          "size":33600,
+          "copy_bytes": 33600
+        }
+      ],
+      "output": {
+        "size": 722400
+      }
+    },
+    "caps": {
+        "sink_pads": [
+          {
+            "media_type": "application/vnd.simaai.tensor",
+            "params": []
+          }
+        ],
+        "src_pads": [
+          {
+            "media_type": "application/vnd.simaai.tensor",
+            "params": []
+          }
+        ]
+      }
+  }

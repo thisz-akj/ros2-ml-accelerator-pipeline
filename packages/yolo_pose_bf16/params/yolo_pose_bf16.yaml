@@ -1,0 +1,67 @@
+executor_config:
+  ros__parameters:
+    multithread: true
+    thread_count: 8
+
+process_sima_yolopose:
+  ros__parameters:
+    # rtsp-> for rtsp stream input, usbcam-> for usb camera input and simaaisrc-> for image source input
+    input_stream_from: "rtsp"
+
+    # RTSP cam params
+    input_src: "rtsp://192.168.132.147:8554/viryastream"
+    latency: 100
+
+    # USB cam params
+    #input_src: "/dev/video0" #Assuming usb camera supports YUY2 format
+    #fps: 15
+
+    #simaaisrc params
+    #input_src: "/data/%d.nv12"  #Place all images in this path with name 1.nv12, 2.nv12 ... in NV12 format
+    #delay : 100 # 1000-> 1FPS, 100->10FPS
+    dec_fmt: "NV12"
+    width: 1280
+    height: 720
+    dump: false
+    queue_size: 20  # Reduced from 10 to prevent buffering issues
+    pub_topic_mla: "mla_raw"
+    cvu_file_path: "configs/processcvu/{hardware_target}/preproc.json"
+    mla_file_path: "configs/processmla/{hardware_target}/mla.json"
+    bc_file_3_path: "configs/bufferconcat/{hardware_target}/0_3_buffer_concat.json"
+    bc_file_4_path: "configs/bufferconcat/{hardware_target}/0_4_buffer_concat.json"
+    bc_file_5_path: "configs/bufferconcat/{hardware_target}/0_5_buffer_concat.json"
+    bc_file_6_path: "configs/bufferconcat/{hardware_target}/0_6_buffer_concat.json"
+    bc_file_7_path: "configs/bufferconcat/{hardware_target}/0_7_buffer_concat.json"
+    bc_file_8_path: "configs/bufferconcat/{hardware_target}/0_8_buffer_concat.json"
+    bc_file_mux_path: "configs/bufferconcat/{hardware_target}/buffer_concat_muxer.json"
+    image_mla_buffer_concat_path: "configs/bufferconcat/{hardware_target}/image_mla_buffer_concat.json"
+    dt_file_3_path: "configs/processcvu/{hardware_target}/0_3_detessellate.json"
+    dt_file_4_path: "configs/processcvu/{hardware_target}/0_4_detessellate.json"
+    dt_file_5_path: "configs/processcvu/{hardware_target}/0_5_detessellate.json"
+    dt_file_6_path: "configs/processcvu/{hardware_target}/0_6_detessellate.json"
+    dt_file_7_path: "configs/processcvu/{hardware_target}/0_7_detessellate.json"
+    dt_file_8_path: "configs/processcvu/{hardware_target}/0_8_detessellate.json"
+    silent: false
+
+yolopose_render:
+  ros__parameters:
+    mla_raw_topic: "mla_raw"
+    pub_topic: "simaai/yoloposerender/output"
+    keypoints_topic: "simaai/keypoints"
+    config_file_path: "configs/yoloposerender/{hardware_target}/yolo_pose_render.json"
+    dump: false
+    queue_size: 5
+    silent: false
+
+allegro_encoder:
+  ros__parameters:
+    sub_topic: "simaai/yoloposerender/output"
+    fps: 15
+    bitrate: 4000
+    width: 1280
+    height: 720
+    format: "NV12"
+    ip: "192.168.132.147"
+    port: 7000
+    queue_size: 5
+    silent: false
