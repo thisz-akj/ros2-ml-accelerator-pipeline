@@ -80,6 +80,4 @@ The pipeline supports the complete transition from a PyTorch-trained model to a 
 - Model compression
 - Memory and tensor layout optimization
 
----
 
-## Repository Structure
