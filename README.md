@@ -57,7 +57,10 @@ The pipeline supports the complete transition from a PyTorch-trained model to a 
 | BF16 (Optimized) | SiMa.ai MLSoC  | 15+ FPS          | < 60 ms      |
 
 - Achieves >95% accuracy retention compared to FP32 baseline  
-- Sustains real-time inference under edge deployment constraints  
+- Sustains real-time inference under edge deployment constraints
+
+- <img width="630" height="287" alt="image" src="https://github.com/user-attachments/assets/b103715f-9923-440e-b866-63b84996f70e" />
+
 
 ---
 
