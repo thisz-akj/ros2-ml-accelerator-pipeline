@@ -37,7 +37,7 @@ The pipeline supports the complete transition from a PyTorch-trained model to a 
 - Exported to ONNX format for hardware compatibility
 
 ### 2. Model Optimization
-- Profiled and optimized using `sima-cli` and ModelSDK
+- Profiled and optimized using written scripts
 - Applied BF16 quantization for performance gains
 
 ### 3. Compilation
@@ -74,9 +74,6 @@ The pipeline supports the complete transition from a PyTorch-trained model to a 
 - PyTorch
 - ONNX
 - ROS2
-
-### Deployment Stack
-- SiMa.ai Palette SDK (ModelSDK, sima-cli, MPK Tool)
 
 ### Optimization Techniques
 - Quantization (BF16, INT8)
