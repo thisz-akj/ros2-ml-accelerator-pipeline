@@ -1,7 +1,7 @@
 # Real-Time Pose Estimation ML-Accelerated Pipeline
 
 ## Overview
-This repository implements a high-throughput keypoint detection and pose estimation pipeline optimized for edge deployment on the SiMa.ai MLSoC. The system bridges the gap between research-grade models and production-ready inference by leveraging hardware-specific acceleration and an optimized compilation workflow.
+This repository implements a high-throughput keypoint detection and pose estimation pipeline optimized for edge deployment on the Edge device. The system bridges the gap between research-grade models and production-ready inference by leveraging hardware-specific acceleration and an optimized compilation workflow.
 
 The pipeline supports the complete transition from a PyTorch-trained model to a hardware-executable ELF artifact, enabling real-time inference under resource-constrained edge environments. Performance is achieved through precision-aware quantization, efficient memory management, and tight integration with the SiMa.ai software stack.
 
@@ -20,7 +20,7 @@ The pipeline supports the complete transition from a PyTorch-trained model to a 
 
 ### Edge Compilation Workflow
 - Converts PyTorch models to ONNX format
-- Uses SiMa.ai Palette SDK (ModelSDK) for profiling, optimization, and compilation
+- Model profiling, optimization, and compilation has been done.
 - Generates hardware-specific ELF binaries for deployment
 
 ### Memory Optimization
